@@ -1,0 +1,20 @@
+running develop
+running egg_info
+creating agrirobot_core.egg-info
+writing agrirobot_core.egg-info/PKG-INFO
+writing dependency_links to agrirobot_core.egg-info/dependency_links.txt
+writing requirements to agrirobot_core.egg-info/requires.txt
+writing top-level names to agrirobot_core.egg-info/top_level.txt
+writing manifest file 'agrirobot_core.egg-info/SOURCES.txt'
+reading manifest file 'agrirobot_core.egg-info/SOURCES.txt'
+writing manifest file 'agrirobot_core.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot-core.egg-link (link to .)
+
+Installed /home/prukubt/agrirobot_ws/build/agrirobot_core
+running symlink_data
+creating /home/prukubt/agrirobot_ws/install/agrirobot_core/share/ament_index
+creating /home/prukubt/agrirobot_ws/install/agrirobot_core/share/ament_index/resource_index
+creating /home/prukubt/agrirobot_ws/install/agrirobot_core/share/ament_index/resource_index/packages
+symbolically linking /home/prukubt/agrirobot_ws/build/agrirobot_core/resource/agrirobot_core -> /home/prukubt/agrirobot_ws/install/agrirobot_core/share/ament_index/resource_index/packages
+symbolically linking /home/prukubt/agrirobot_ws/build/agrirobot_core/package.xml -> /home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core

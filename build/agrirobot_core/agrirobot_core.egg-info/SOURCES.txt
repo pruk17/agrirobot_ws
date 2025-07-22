@@ -1,0 +1,11 @@
+package.xml
+setup.cfg
+setup.py
+agrirobot_core/__init__.py
+agrirobot_core.egg-info/PKG-INFO
+agrirobot_core.egg-info/SOURCES.txt
+agrirobot_core.egg-info/dependency_links.txt
+agrirobot_core.egg-info/requires.txt
+agrirobot_core.egg-info/top_level.txt
+agrirobot_core.egg-info/zip-safe
+resource/agrirobot_core
