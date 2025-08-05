@@ -1,5 +1,5 @@
 import cv2
-from flask import Flask, Response
+from flask import Flask, Response, render_template_string
 
 app = Flask(__name__)
 cap = cv2.VideoCapture(0)
@@ -10,13 +10,24 @@ def generate_frames():
         if not success:
             break
         else:
-            # Encode frame as JPEG
             ret, buffer = cv2.imencode('.jpg', frame)
             frame_bytes = buffer.tobytes()
-
-            # Yield frame bytes as a multipart response
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+
+@app.route('/')
+def index():
+    return render_template_string('''
+        <html>
+            <head>
+                <title>Live Camera</title>
+            </head>
+            <body>
+                <h1>Live Camera Feed</h1>
+                <img src="/video_feed" width="640" height="480">
+            </body>
+        </html>
+    ''')
 
 @app.route('/video_feed')
 def video_feed():
