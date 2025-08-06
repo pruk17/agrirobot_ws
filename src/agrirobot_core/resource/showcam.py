@@ -9,6 +9,7 @@ from flask import Flask, Response, render_template_string
 app = Flask(__name__)
 #cap => VideoCapture object to access the camera
 cap = cv2.VideoCapture(0)#VideoCapture(0) => opens the default camera (0 is usually the default camera index
+
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
@@ -19,6 +20,7 @@ def generate_frames():
         #success => boolean indicating if the frame was captured successfully
         #frame => the captured frame from the camera (numpy array)
         success, frame = cap.read()
+        frame = cv2.flip(frame, 1)  # Flip the frame horizontally for a mirror effect
         if not success:
             break
         else:
