@@ -7,3 +7,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+#ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
+
