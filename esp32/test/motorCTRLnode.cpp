@@ -22,11 +22,37 @@ rclc_support_t support;              // Support structure containing ROS2 contex
 rcl_node_t node;                     // ROS2 node handle
 rcl_allocator_t allocator;           // Memory allocator for ROS2 operations
 rclc_executor_t executor;            // Executor to manage and dispatch callbacks
+// rcl => ROS Client Library
 
 // Callback function invoked whenever a new message arrives on the subscribed topic
+// Callback function invoked whenever a new message arrives
 void subscription_callback(const void * msgin) {
-  // Implementation to handle incoming message (defined elsewhere)
+  // Cast the generic pointer (msgin) to a pointer of type std_msgs__msg__String
+  // so we can access the fields of the incoming ROS 2 String message.
+  const std_msgs__msg__String * incoming_msg = (const std_msgs__msg__String *)msgin;
+
+  // Extract the data from the incoming message and convert it to a String
+  // The data field contains the actual command string sent from the ROS2 publisher
+  // The incoming_msg is a pointer to the std_msgs__msg__String structure
+  String command = String(incoming_msg->data.data);
+
+  if (command == "w") {
+    Serial.println("drive forward");
+    digitalWrite(motorPinForward, HIGH);
+    digitalWrite(motorPinBackward, LOW);
+  }
+  else if (command == "s") {
+    Serial.println("drive backward");
+    digitalWrite(motorPinForward, LOW);
+    digitalWrite(motorPinBackward, HIGH);
+  }
+  else {
+    Serial.println("stop");
+    digitalWrite(motorPinForward, LOW);
+    digitalWrite(motorPinBackward, LOW);
+  }
 }
+
 
 void setup() {
   Serial.begin(115200);                 // Initialize Serial communication for debugging and micro-ROS transport
