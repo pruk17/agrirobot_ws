@@ -1,0 +1,18 @@
+running egg_info
+writing ../../build/agrirobot_core/agrirobot_core.egg-info/PKG-INFO
+writing dependency_links to ../../build/agrirobot_core/agrirobot_core.egg-info/dependency_links.txt
+writing entry points to ../../build/agrirobot_core/agrirobot_core.egg-info/entry_points.txt
+writing requirements to ../../build/agrirobot_core/agrirobot_core.egg-info/requires.txt
+writing top-level names to ../../build/agrirobot_core/agrirobot_core.egg-info/top_level.txt
+file DiffdrivePublisher.py (for module DiffdrivePublisher) not found
+reading manifest file '../../build/agrirobot_core/agrirobot_core.egg-info/SOURCES.txt'
+writing manifest file '../../build/agrirobot_core/agrirobot_core.egg-info/SOURCES.txt'
+running build
+running build_py
+file DiffdrivePublisher.py (for module DiffdrivePublisher) not found
+running install
+file DiffdrivePublisher.py (for module DiffdrivePublisher) not found
+running install_lib
+running install_data
+creating /home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core/launch
+error: can't copy 'launch/Ros_lunch.py': doesn't exist or not a regular file

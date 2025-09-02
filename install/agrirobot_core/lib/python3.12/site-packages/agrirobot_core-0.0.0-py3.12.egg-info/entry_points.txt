@@ -1,0 +1,2 @@
+[console_scripts]
+diffdrive_publisher = agrirobot_core.DiffdrivePublisher:main

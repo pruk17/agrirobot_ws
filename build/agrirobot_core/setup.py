@@ -1,1 +1,0 @@
-/home/prukubt/agrirobot_ws/src/agrirobot_core/setup.py

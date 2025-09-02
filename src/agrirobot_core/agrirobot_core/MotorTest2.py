@@ -31,21 +31,35 @@ def keyboard_mode():
     Listens for keys:
         'w' - send {"cmd": "forward"} JSON message
         's' - send {"cmd": "backward"} JSON message
+        'e' - send {"cmd": "stop"} JSON message
         'q' - quit keyboard mode
     Sends JSON strings terminated by newline for ESP32 parsing.
     """
-    print("Keyboard mode started. Press 'w' forward, 's' backward, 'q' quit.")  
+    print("Keyboard mode started. Press 'w' forward, 's' backward, 'e' brake," \
+    " 'q' quit.")  
     try:
         while True:
             key = get_key()  # Get one keypress from terminal
             if key.lower() == 'w':
                 msg = json.dumps({"cmd": "forward"}) + '\n'
                 com.write(msg.encode('utf-8'))  # Send JSON command as bytes
-                print("Sent: forward")
+                print("input: forward")
             elif key.lower() == 's':
                 msg = json.dumps({"cmd": "backward"}) + '\n'
                 com.write(msg.encode('utf-8'))
-                print("Sent: backward")
+                print("input: backward")
+            elif key.lower() == 'a':
+                msg = json.dumps({"cmd": "left"}) + '\n'
+                com.write(msg.encode('utf-8'))
+                print("input: backward")
+            elif key.lower() == 'd':
+                msg = json.dumps({"cmd": "right"}) + '\n'
+                com.write(msg.encode('utf-8'))
+                print("input: backward")
+            elif key.lower() == 'e':
+                msg = json.dumps({"cmd": "stop"}) + '\n'
+                com.write(msg.encode('utf-8'))
+                print("input: brake")
             elif key.lower() == 'q':
                 print("Quit keyboard mode.")
                 break  # Exit loop to stop keyboard mode

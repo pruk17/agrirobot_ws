@@ -12,9 +12,26 @@
 #include <std_msgs/msg/string.h>    // Definition of the ROS2 standard message type std_msgs/msg/String
 
 // Define motor driver control pins for forward and backward directions
-const int motorPinForward = 12;
-const int motorPinBackward = 13;
 
+const int M1A = 16;
+const int M2A = 17;
+const int M1B = 18;
+const int M2B = 19;
+
+void brake() {
+  digitalWrite(M1A, LOW); digitalWrite(M2A, LOW);
+  digitalWrite(M1B, LOW); digitalWrite(M2B, LOW);
+}
+
+void forward() {
+  digitalWrite(M1A, HIGH); digitalWrite(M2A, HIGH);
+  digitalWrite(M1B, LOW); digitalWrite(M2B, LOW);
+}
+
+void backward() {
+  digitalWrite(M1A, LOW); digitalWrite(M2A, LOW);
+  digitalWrite(M1B, HIGH); digitalWrite(M2B, HIGH);
+}
 // micro-ROS related variables
 rcl_subscription_t subscriber;       // Subscription handle to receive messages from a ROS2 topic
 std_msgs__msg__String msg;           // Message storage for received String messages
@@ -38,26 +55,28 @@ void subscription_callback(const void * msgin) {
 
   if (command == "w") {
     Serial.println("drive forward");
-    digitalWrite(motorPinForward, HIGH);
-    digitalWrite(motorPinBackward, LOW);
+    forward();
   }
   else if (command == "s") {
     Serial.println("drive backward");
-    digitalWrite(motorPinForward, LOW);
-    digitalWrite(motorPinBackward, HIGH);
+    backward();
   }
   else {
     Serial.println("stop");
-    digitalWrite(motorPinForward, LOW);
-    digitalWrite(motorPinBackward, LOW);
+    brake();
   }
 }
 
 
 void setup() {
-  Serial.begin(115200);                 // Initialize Serial communication for debugging and micro-ROS transport
-  pinMode(motorPinForward, OUTPUT);    // Set motor forward pin as output
-  pinMode(motorPinBackward, OUTPUT);   // Set motor backward pin as output
+  Serial.begin(115200);// Initialize Serial communication for debugging and micro-ROS transport
+  // Motor pins as output
+  pinMode(M1A, OUTPUT);
+  pinMode(M2A, OUTPUT);
+  pinMode(M1B, OUTPUT);
+  pinMode(M2B, OUTPUT);
+  // Ensure motors are stopped at startup
+  brake();
 
   // Configure micro-ROS to use Serial transport (e.g., USB serial connection) to communicate with Agent
   set_microros_transports();
