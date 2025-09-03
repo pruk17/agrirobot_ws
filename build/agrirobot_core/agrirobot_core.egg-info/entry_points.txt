@@ -1,2 +1,3 @@
 [console_scripts]
 diffdrive_publisher = agrirobot_core.DiffdrivePublisher:main
+joystick_publisher = agrirobot_core.JoyStickPublisher:main

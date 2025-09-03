@@ -1,5 +1,6 @@
+#ifdef Node2
 #include <Arduino.h>               // Basic Arduino/ESP32 library for pin control and Serial
-#include <micro_ros_arduino.h>    // micro-ROS client library for Arduino/ESP32
+#include <micro_ros_platformio.h>    // micro-ROS client library for Arduino/ESP32
                                  // Provides functions to connect micro-ROS Agent via Serial
                                 // e.g., set_microros_serial_transports()
 #include <rcl/rcl.h>             // Core ROS2 client library (rcl)
@@ -13,10 +14,10 @@
 
 // Define motor driver control pins for forward and backward directions
 
-const int M1A = 16;
-const int M2A = 17;
-const int M1B = 18;
-const int M2B = 19;
+const int M1A = 33;
+const int M2A = 32;
+const int M1B = 35;
+const int M2B = 34;
 
 void brake() {
   digitalWrite(M1A, LOW); digitalWrite(M2A, LOW);
@@ -79,7 +80,7 @@ void setup() {
   brake();
 
   // Configure micro-ROS to use Serial transport (e.g., USB serial connection) to communicate with Agent
-  set_microros_transports();
+  set_microros_serial_transports(Serial);
   // Obtain the default allocator used for memory management in ROS2
   allocator = rcl_get_default_allocator();
 
@@ -108,3 +109,4 @@ void loop() {
   rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
 }
 // Control motor based on received messages
+#endif

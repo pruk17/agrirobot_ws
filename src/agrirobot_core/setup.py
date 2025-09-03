@@ -36,6 +36,7 @@ setup(
             # Create a command to run DiffdrivePublisher node with ros2 run
             # The module path now includes the package name: agrirobot_core.DiffdrivePublisher
             'diffdrive_publisher = agrirobot_core.DiffdrivePublisher:main',  # Must point to main() in the file
+            'joystick_publisher = agrirobot_core.JoyStickPublisher:main',
             # Additional Python nodes can be added here if created
             # Example: 'NewNode = agrirobot_core.NewNode:main'
         ],

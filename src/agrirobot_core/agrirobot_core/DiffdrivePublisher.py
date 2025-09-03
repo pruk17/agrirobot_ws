@@ -15,13 +15,25 @@ class MotorPublisher(Node):
 
     def timer_callback(self):
         # Read keyboard input
-        command = input("Press 'w' for forward, 's' for backward, or 'q' to quit: ").strip().lower()
+        command = input("Press w/a/s/d to move | e = stop | q = quit: ").strip().lower()
 
         if command == 'w':
             msg = String()
-            msg.data = 'drive forward'
+            msg.data = 'drive forward' # Command to drive forward
             self.publisher_.publish(msg)
             self.get_logger().info("Sent: drive forward")
+
+        elif command == 'a':
+            msg = String()
+            msg.data = 'drive left'
+            self.publisher_.publish(msg)
+            self.get_logger().info("Sent: drive left")
+
+        elif command == 'd':
+            msg = String()
+            msg.data = 'drive right'
+            self.publisher_.publish(msg)
+            self.get_logger().info("Sent: drive right")
 
         elif command == 's':
             msg = String()
@@ -29,12 +41,18 @@ class MotorPublisher(Node):
             self.publisher_.publish(msg)
             self.get_logger().info("Sent: drive backward")
 
+        elif command == 'e':
+            msg = String()
+            msg.data = 'drive stop'
+            self.publisher_.publish(msg)
+            self.get_logger().warn("Sent: drive STOP")
+
         elif command == 'q':
             self.get_logger().info("Exiting publisher...")
             rclpy.shutdown()
 
         else:
-            self.get_logger().warn("Unknown key pressed. Use w/s/q.")
+            self.get_logger().warn("Unknown key pressed. Use w/a/s/d/e/q.")
 
 def main(args=None):
     rclpy.init(args=args)

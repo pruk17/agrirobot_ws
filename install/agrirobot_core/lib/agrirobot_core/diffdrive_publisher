@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/prukubt/venv/bin/python3
 # EASY-INSTALL-ENTRY-SCRIPT: 'agrirobot-core==0.0.0','console_scripts','diffdrive_publisher'
 import re
 import sys

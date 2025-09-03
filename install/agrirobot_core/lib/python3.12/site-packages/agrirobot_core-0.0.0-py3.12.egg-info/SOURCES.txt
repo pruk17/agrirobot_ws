@@ -9,6 +9,7 @@ setup.py
 ../../build/agrirobot_core/agrirobot_core.egg-info/top_level.txt
 ../../build/agrirobot_core/agrirobot_core.egg-info/zip-safe
 agrirobot_core/DiffdrivePublisher.py
+agrirobot_core/JoyStickPublisher.py
 agrirobot_core/MotorTest2.py
 agrirobot_core/__init__.py
 agrirobot_core/main.py

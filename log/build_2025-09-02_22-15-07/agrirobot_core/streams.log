@@ -1,0 +1,31 @@
+[1.026s] Invoking command in '/home/prukubt/agrirobot_ws/src/agrirobot_core': PYTHONPATH=/home/prukubt/agrirobot_ws/build/agrirobot_core/prefix_override:/home/prukubt/venv/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv) /home/prukubt/venv/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/agrirobot_core build --build-base /home/prukubt/agrirobot_ws/build/agrirobot_core/build install --record /home/prukubt/agrirobot_ws/build/agrirobot_core/install.log --single-version-externally-managed install_data
+[1.357s] running egg_info
+[1.374s] writing ../../build/agrirobot_core/agrirobot_core.egg-info/PKG-INFO
+[1.375s] writing dependency_links to ../../build/agrirobot_core/agrirobot_core.egg-info/dependency_links.txt
+[1.383s] writing entry points to ../../build/agrirobot_core/agrirobot_core.egg-info/entry_points.txt
+[1.386s] writing requirements to ../../build/agrirobot_core/agrirobot_core.egg-info/requires.txt
+[1.391s] writing top-level names to ../../build/agrirobot_core/agrirobot_core.egg-info/top_level.txt
+[1.443s] reading manifest file '../../build/agrirobot_core/agrirobot_core.egg-info/SOURCES.txt'
+[1.445s] writing manifest file '../../build/agrirobot_core/agrirobot_core.egg-info/SOURCES.txt'
+[1.446s] running build
+[1.446s] running build_py
+[1.447s] copying agrirobot_core/main.py -> /home/prukubt/agrirobot_ws/build/agrirobot_core/build/lib/agrirobot_core
+[1.447s] copying agrirobot_core/showcam.py -> /home/prukubt/agrirobot_ws/build/agrirobot_core/build/lib/agrirobot_core
+[1.447s] copying agrirobot_core/MotorTest2.py -> /home/prukubt/agrirobot_ws/build/agrirobot_core/build/lib/agrirobot_core
+[1.447s] copying agrirobot_core/__init__.py -> /home/prukubt/agrirobot_ws/build/agrirobot_core/build/lib/agrirobot_core
+[1.448s] copying agrirobot_core/DiffdrivePublisher.py -> /home/prukubt/agrirobot_ws/build/agrirobot_core/build/lib/agrirobot_core
+[1.448s] copying agrirobot_core/JoyStickPublisher.py -> /home/prukubt/agrirobot_ws/build/agrirobot_core/build/lib/agrirobot_core
+[1.448s] running install
+[1.455s] running install_lib
+[1.473s] copying /home/prukubt/agrirobot_ws/build/agrirobot_core/build/lib/agrirobot_core/DiffdrivePublisher.py -> /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core
+[1.474s] byte-compiling /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core/DiffdrivePublisher.py to DiffdrivePublisher.cpython-312.pyc
+[1.476s] running install_data
+[1.476s] copying package.xml -> /home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core
+[1.476s] running install_egg_info
+[1.495s] removing '/home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core-0.0.0-py3.12.egg-info' (and everything under it)
+[1.498s] Copying ../../build/agrirobot_core/agrirobot_core.egg-info to /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core-0.0.0-py3.12.egg-info
+[1.498s] running install_scripts
+[1.594s] Installing diffdrive_publisher script to /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/agrirobot_core
+[1.595s] Installing joystick_publisher script to /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/agrirobot_core
+[1.603s] writing list of installed files to '/home/prukubt/agrirobot_ws/build/agrirobot_core/install.log'
+[1.692s] Invoked command in '/home/prukubt/agrirobot_ws/src/agrirobot_core' returned '0': PYTHONPATH=/home/prukubt/agrirobot_ws/build/agrirobot_core/prefix_override:/home/prukubt/venv/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv) /home/prukubt/venv/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/agrirobot_core build --build-base /home/prukubt/agrirobot_ws/build/agrirobot_core/build install --record /home/prukubt/agrirobot_ws/build/agrirobot_core/install.log --single-version-externally-managed install_data
