@@ -76,8 +76,13 @@ rclc_executor_t       executor;
 rcl_subscription_t    sub_cmd;
 rcl_publisher_t       pub_status;
 
+// NEW: debug publisher to report command & applied status
+rcl_publisher_t       pub_debug;        // NEW: publisher for /motor_command/debug
+
 std_msgs__msg__String msg_cmd;
 std_msgs__msg__String msg_status;
+// NEW: debug message buffer
+std_msgs__msg__String msg_debug;        // NEW
 
 // ---------- Motor helpers ----------
 static inline void stopMotors() {
@@ -139,6 +144,13 @@ void cmd_callback(const void * msgin) {
   // Check the return value to silence -Wunused-result and catch errors
   CHECK(rcl_publish(&pub_status, &msg_status, NULL));
 
+  // NEW: also publish a human-readable debug line to /motor_command/debug
+  // Compose: "node:<name> cmd:'<incoming>' status:'<applied>'"
+  String dbg = String("node:") + NODE_NAME +
+               " cmd:'" + command + "'" +
+               " status:'" + String(msg_status.data.data) + "'";
+  rosidl_runtime_c__String__assign(&msg_debug.data, dbg.c_str());  // NEW
+  CHECK(rcl_publish(&pub_debug, &msg_debug, NULL));                 // NEW
 }
 
 // ---------- Setup ----------
@@ -173,6 +185,17 @@ void setup() {
   &pub_status, &node,
   ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, String),
   STATUS_TOPIC));
+
+  // NEW: create the debug publisher on /motor_command/debug
+  CHECK_FATAL(rclc_publisher_init_default(
+  &pub_debug, &node,
+  ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, String),
+  "/motor_command/debug"));  // NEW
+
+  // NEW: initialize message buffers (important to avoid memory issues)
+  std_msgs__msg__String__init(&msg_cmd);     // NEW
+  std_msgs__msg__String__init(&msg_status);  // NEW
+  std_msgs__msg__String__init(&msg_debug);   // NEW
 
   CHECK_FATAL(rclc_executor_init(&executor, &support.context, 1, &allocator));
   CHECK_FATAL(rclc_executor_add_subscription(&executor, &sub_cmd, &msg_cmd, &cmd_callback, ON_NEW_DATA));
