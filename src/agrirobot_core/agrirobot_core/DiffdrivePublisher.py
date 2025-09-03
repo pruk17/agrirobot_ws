@@ -54,16 +54,12 @@ class MotorPublisher(Node):
         else:
             self.get_logger().warn("Unknown key pressed. Use w/a/s/d/e/q.")
 
-def main(args=None):
-    rclpy.init(args=args)
-    motor_publisher = MotorPublisher()
-    try:
-        rclpy.spin(motor_publisher)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        motor_publisher.destroy_node()
-        rclpy.shutdown()
+def main():
+    rclpy.init()
+    node = MotorPublisher()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

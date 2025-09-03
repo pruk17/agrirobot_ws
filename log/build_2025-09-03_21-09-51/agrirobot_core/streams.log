@@ -1,0 +1,23 @@
+[1.255s] Invoking command in '/home/prukubt/agrirobot_ws/build/agrirobot_core': PYTHONPATH=/home/prukubt/agrirobot_ws/build/agrirobot_core/prefix_override:/home/prukubt/venv/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv) /home/prukubt/venv/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/prukubt/agrirobot_ws/build/agrirobot_core/build --no-deps symlink_data
+[1.925s] running develop
+[2.210s] running egg_info
+[2.233s] creating agrirobot_core.egg-info
+[2.233s] writing agrirobot_core.egg-info/PKG-INFO
+[2.234s] writing dependency_links to agrirobot_core.egg-info/dependency_links.txt
+[2.235s] writing entry points to agrirobot_core.egg-info/entry_points.txt
+[2.235s] writing requirements to agrirobot_core.egg-info/requires.txt
+[2.235s] writing top-level names to agrirobot_core.egg-info/top_level.txt
+[2.235s] writing manifest file 'agrirobot_core.egg-info/SOURCES.txt'
+[2.280s] reading manifest file 'agrirobot_core.egg-info/SOURCES.txt'
+[2.282s] writing manifest file 'agrirobot_core.egg-info/SOURCES.txt'
+[2.310s] running build_ext
+[2.310s] Creating /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot-core.egg-link (link to .)
+[2.312s] Installing diffdrive_publisher script to /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/agrirobot_core
+[2.312s] 
+[2.312s] Installed /home/prukubt/agrirobot_ws/build/agrirobot_core
+[2.313s] running symlink_data
+[2.313s] creating /home/prukubt/agrirobot_ws/install/agrirobot_core/share/ament_index/resource_index/packages
+[2.314s] symbolically linking /home/prukubt/agrirobot_ws/build/agrirobot_core/resource/agrirobot_core -> /home/prukubt/agrirobot_ws/install/agrirobot_core/share/ament_index/resource_index/packages
+[2.314s] symbolically linking /home/prukubt/agrirobot_ws/build/agrirobot_core/package.xml -> /home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core
+[2.314s] creating /home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core/launch
+[2.445s] Invoked command in '/home/prukubt/agrirobot_ws/build/agrirobot_core' returned '0': PYTHONPATH=/home/prukubt/agrirobot_ws/build/agrirobot_core/prefix_override:/home/prukubt/venv/lib/python3.12/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(venv) /home/prukubt/venv/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/prukubt/agrirobot_ws/build/agrirobot_core/build --no-deps symlink_data

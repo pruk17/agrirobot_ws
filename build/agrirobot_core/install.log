@@ -12,7 +12,7 @@
 /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core/__pycache__/JoyStickPublisher.cpython-312.pyc
 /home/prukubt/agrirobot_ws/install/agrirobot_core/share/ament_index/resource_index/packages/agrirobot_core
 /home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core/package.xml
-/home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core/launch
+/home/prukubt/agrirobot_ws/install/agrirobot_core/share/agrirobot_core/launch/ros_launch.py
 /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core-0.0.0-py3.12.egg-info/zip-safe
 /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core-0.0.0-py3.12.egg-info/SOURCES.txt
 /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core-0.0.0-py3.12.egg-info/top_level.txt
@@ -21,4 +21,3 @@
 /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core-0.0.0-py3.12.egg-info/requires.txt
 /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/python3.12/site-packages/agrirobot_core-0.0.0-py3.12.egg-info/dependency_links.txt
 /home/prukubt/agrirobot_ws/install/agrirobot_core/lib/agrirobot_core/diffdrive_publisher
-/home/prukubt/agrirobot_ws/install/agrirobot_core/lib/agrirobot_core/joystick_publisher

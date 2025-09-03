@@ -26,8 +26,9 @@ setup(
             ['resource/' + package_name]),
         # Copy package.xml to share
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', [package_name + '/launch/ros_launch.py']),
         # Install all launch files
-        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
+        #(os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
     ],
 
     # Entry points define console scripts for Python nodes
@@ -36,9 +37,15 @@ setup(
             # Create a command to run DiffdrivePublisher node with ros2 run
             # The module path now includes the package name: agrirobot_core.DiffdrivePublisher
             'diffdrive_publisher = agrirobot_core.DiffdrivePublisher:main',  # Must point to main() in the file
-            'joystick_publisher = agrirobot_core.JoyStickPublisher:main',
             # Additional Python nodes can be added here if created
             # Example: 'NewNode = agrirobot_core.NewNode:main'
         ],
     },
 )
+
+#to see executable file:
+#ros2 pkg executables agrirobot_core
+#to see prefix of the package:
+#ros2 pkg prefix agrirobot_core
+#to run node:
+#ros2 run agrirobot_core diffdrive_publisher
